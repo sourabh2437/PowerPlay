@@ -1,32 +1,16 @@
 {
   "name": "powerplay",
-  "version": "1.0.0",
-  "description": "Powerplay Booking App",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sourabh2437/PowerPlay.git"
-  },
-  "author": "SK, GB",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sourabh2437/PowerPlay/issues"
-  },
-  "homepage": "https://github.com/sourabh2437/PowerPlay#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "express": "^4.16.2",
-    "mongodb": "^2.2.33",
     "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+    "react-dom": "^16.1.1",
+    "react-scripts": "1.0.17"
   },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

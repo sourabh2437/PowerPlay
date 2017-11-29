@@ -41,7 +41,7 @@ p, figure {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #484c50;
+  color: white;
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 400;
   margin: 0 0 30px 0;
@@ -365,6 +365,11 @@ body {
   width: 65%;
   float: left;
 }
+
+#fh5co-hero .fh5co-intro > div .fh5co-left-position a {
+  font-size: 32px;
+}
+
 @media screen and (max-width: 992px) {
   #fh5co-hero .fh5co-intro > div .fh5co-left-position {
     width: 100%;

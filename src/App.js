@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import FootballCourts from './Components/FootballCourts'
 import BadmintonCourts from './Components/BadmintonCourts'
-import AppHeader from './Components/AppHeader'
 import SportTile from './Components/SportTile'
 import { Switch, Route } from 'react-router-dom';
 
@@ -11,8 +10,6 @@ import { Switch, Route } from 'react-router-dom';
 class App extends Component {
     
     state = {
-        pageHeader: 'Available Sports',
-        pageDesc:'Just play. Have fun. Enjoy the game.'
     };
     
     fetchSport = (sid) =>{
@@ -42,9 +39,6 @@ class App extends Component {
         <div className="App">
             
             <div className="container">
-                <AppHeader header ={this.state.pageHeader} 
-                             desc ={this.state.pageDesc} />
-            
                 
                 <Switch>
                     <Route exact path='/' component={SportTile} />  

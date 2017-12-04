@@ -6,8 +6,8 @@ class AppHeader extends Component {
     return (
       <div className="row row-bottom-padded-md">
                     <div className="col-md-6 col-md-offset-3 text-center">
-                        <h2 className="fh5co-lead animate-box">{this.props.header}</h2>
-                        <p className="fh5co-sub-lead animate-box"> {this.props.desc}</p>    
+                        <h2 className="fh5co-lead">{this.props.header}</h2>
+                        <p className="fh5co-sub-lead"> {this.props.desc}</p>    
                     </div>
                 </div>
     );

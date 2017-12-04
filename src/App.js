@@ -4,6 +4,10 @@ import FootballCourts from './Components/FootballCourts'
 import BadmintonCourts from './Components/BadmintonCourts'
 import AppHeader from './Components/AppHeader'
 import SportTile from './Components/SportTile'
+import { Switch, Route } from 'react-router-dom';
+
+
+
 class App extends Component {
     
     state = {
@@ -34,20 +38,24 @@ class App extends Component {
     
     render() {
     return (
-      <div className="App">
         
-        <div className="container">
-               
+        <div className="App">
+            
+            <div className="container">
                 <AppHeader header ={this.state.pageHeader} 
-                             desc ={this.state.pageDesc}/>
-                        
+                             desc ={this.state.pageDesc} />
+            
                 
-                {this.handleCurrentContent()}
-                
-        
+                <Switch>
+                    <Route exact path='/' component={SportTile} />  
+                    <Route path='/badminton' component={BadmintonCourts} />
+                    <Route path='/football' component={FootballCourts} />
+                </Switch>
+
             </div>
+               
+        </div>
         
-      </div>
     );
   }
 }

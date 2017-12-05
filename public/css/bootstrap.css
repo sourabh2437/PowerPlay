@@ -14,7 +14,11 @@ html {
 body {
   margin: 0;
 }
-
+#modelTitle ,#modelDesc{
+    color:black;
+    text-align: center
+    
+}
 article,
 aside,
 details,

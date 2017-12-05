@@ -1,57 +1,30 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
 import { Link } from 'react-router-dom';
-
 import ConfirmBooking from './ConfirmBooking'; 
 import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 import {OverlayTrigger, Tooltip, Popover} from 'react-bootstrap';
 
 
-const modalInstance = (
-  <div className="static-modal">
-    <Modal.Dialog>
-      <Modal.Header>
-        <Modal.Title>Modal title</Modal.Title>
-      </Modal.Header>
-
-      <Modal.Body>
-        One fine body...
-      </Modal.Body>
-
-      <Modal.Footer>
-        <Button>Close</Button>
-        <Button bsStyle="primary">Save changes</Button>
-      </Modal.Footer>
-
-    </Modal.Dialog>
-  </div>
-);
-
-
-
 class CourtPreview extends Component {
     
-    constructor(props) {
-    super(props);
-        this.state = {
-      showComponent: false,
-        };
-    this.onPressBookBtn = this.onPressBookBtn.bind(this);
-  }
+    constructor(props){
+        super(props);
+        this.state= {
+            showModal: false 
+    }; 
+    this.open = this.open.bind(this);
+    this.close = this.close.bind(this);
     
-    
-    onPressBookBtn()
-    {
-        this.setState({
-            showComponent: true,
-            });
-        
-        ReactDOM.render(modalInstance, document.getElementById('g'));
-        
     }
-    
+  close()  {
+    this.setState({ showModal: false });
+  };
+
+  open() {
+    this.setState({ showModal: true });
+  };
     render() {
     return (
         
@@ -61,18 +34,23 @@ class CourtPreview extends Component {
                 <div className="fh5co-text">
                     <h2>{this.props.courtName}</h2>
                     <p>{this.props.courtLocation}</p>
-                    <button type="button" className="btn btn-primary" onClick={this.onPressBookBtn} >Book</button>
+                    <Button bsStyle="primary" onClick={this.open}>Book</Button>
         
-                    <Button bsStyle="primary" onClick={this.onPressBookBtn}>Primary</Button>
-                    
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal.Header closeButton>
+            <Modal.Title id="modelTitle"componentClass="h2">Confirm Booking</Modal.Title>
+          </Modal.Header>
+          <Modal.Body id="modelDesc" bsSize="large">
+            Confirm Badminton Court no. 3 on 05/12/17 from 5PM - 6PM
+          </Modal.Body>
+          <Modal.Footer>
+            <Button bsStyle="success" onClick={this.close}>Confirm Booking</Button>
+            <Button bsStyle="danger" onClick={this.close}>Cancel</Button>
+          </Modal.Footer>
+        </Modal>
                 </div>
-            </div>
-        
-            <div id='g'></div>
-        {this.state.showComponent ? (<ConfirmBooking />) :  null}
+            </div>  
         </div>
-        
-        
     );
   }
 }

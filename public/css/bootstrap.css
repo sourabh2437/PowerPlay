@@ -17,7 +17,9 @@ body {
 #modelTitle ,#modelDesc{
     color:black;
     text-align: center
-    
+}
+#appRow{
+    margin-bottom: 100px;
 }
 article,
 aside,

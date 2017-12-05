@@ -1,25 +1,51 @@
 {
-  "badminton": [
+  "badminton": 
     {
+    "location":[
+     
+      [
+        {
       "id": 1,
       "courtName": "Badminton A",
       "courtLocation": "Location 1"
     },
+        {
+      "id": 2,
+      "courtName": "Badminton B",
+      "courtLocation": "Location 2"
+    },
+        {
+      "id": 3,
+      "courtName": "Badminton C",
+      "courtLocation": "Location 3"
+    },
+        {
+      "id": 4,
+      "courtName": "Badminton D",
+      "courtLocation": "Location 4"
+    }
+    ],
+    [
+        
     {
       "id": 2,
       "courtName": "Badminton B",
       "courtLocation": "Location 2"
     },
-    {
+        {
       "id": 3,
       "courtName": "Badminton C",
       "courtLocation": "Location 3"
-    },
-    {
-      "id": 4,
-      "courtName": "Badminton D",
-      "courtLocation": "Location 4"
+    }]
+      
+    ]
     }
-  ]
     
+    ,
+    "football": []
+    
+    
+    
+    
+  
 }

@@ -28,7 +28,7 @@ class BadmintonCourts extends Component {
         </div>
                 <div className="row" >
                     {data.badminton.location[this.state.location].map(itr =>
-                      <CourtPreview key={itr.id} {...itr} />
+                      <CourtPreview image={"images/badminton_tile.jpg"} key={itr.id} {...itr} />
                     )}
                 </div>
         

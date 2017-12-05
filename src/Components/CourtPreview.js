@@ -12,7 +12,7 @@ class CourtPreview extends Component {
     constructor(props){
         super(props);
         this.state= {
-            showModal: false 
+            showModal: false
     }; 
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
@@ -28,14 +28,14 @@ class CourtPreview extends Component {
     render() {
     return (
         
-        <div className="col-md-6 col-sm-6 col-xxs-12">
+        <div className="col-md-3 col-sm-3 col-xxs-6" align="center">
             <div className="fh5co-project-item">
-                <img src="images/Bicon.jpg" alt="" className="img-responsive" />
+                <img src={this.props.image} alt="" className="img-responsive" />
                 <div className="fh5co-text">
                     <h2>{this.props.courtName}</h2>
-                    <p>{this.props.courtLocation}</p>
-                    <Button bsStyle="primary" onClick={this.open}>Book</Button>
-        
+                    <p>{this.props.courtLocation}</p>               
+                    <Button float="right" bsStyle="primary" onClick={this.open}>Book</Button>
+                    
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title id="modelTitle"componentClass="h2">Confirm Booking</Modal.Title>

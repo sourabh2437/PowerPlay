@@ -1,0 +1,55 @@
+{
+  
+  
+      "l1":{
+          "properties":{
+            "Name":"Kinesis",
+            "Address":"Behind SAP",
+            "Football":{
+              "Courts":2,
+              "Price":{
+                "s0":1100,
+                "s1":1200
+              }
+            },
+            "Badminton":{
+              "Courts":4,
+              "Price":{
+                "s0":100,
+                "s1":100
+              }
+            }
+            
+          }         
+          
+        },
+      
+      "12":{
+       "properties":{
+            "Name":"Powerplay 1",
+            "Address":"Near RxDx",
+            "Football":{
+              "Courts":3,
+              "Price":{
+                "s0":1100,
+                "s1":1200
+              }
+            },
+            "Badminton":{
+              "Courts":5,
+              "Price":{
+                "s0":100,
+                "s1":100
+              }
+            }
+            
+          }        
+       
+          
+        }
+ 
+    
+  
+   
+  
+}

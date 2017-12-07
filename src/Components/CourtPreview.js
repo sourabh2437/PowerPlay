@@ -32,16 +32,22 @@ class CourtPreview extends Component {
             <div className="fh5co-project-item">
                 <img src={this.props.image} alt="" className="img-responsive" />
                 <div className="fh5co-text">
-                    <h2>{this.props.courtName}</h2>
-                    <p>{this.props.courtLocation}</p>               
+                    <p>Court - {this.props.courtNumber}</p>
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <kbd>₹ {this.props.price}</kbd>
+                        </div>
+                    <div className="col-sm-6">
                     <Button float="right" bsStyle="primary" onClick={this.open}>Book</Button>
+                        </div>
+                    </div>
                     
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title id="modelTitle"componentClass="h2">Confirm Booking</Modal.Title>
           </Modal.Header>
           <Modal.Body id="modelDesc" bsSize="large">
-            Confirm Badminton Court no. 3 on 05/12/17 from 5PM - 6PM
+            Confirm Badminton Court no. {this.props.courtNumber} on 05/12/17 from {this.props.sLabel}
           </Modal.Body>
           <Modal.Footer>
             <Button bsStyle="success" onClick={this.close}>Confirm Booking</Button>

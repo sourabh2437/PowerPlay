@@ -16,7 +16,7 @@ class SlotFilter extends Component{
         value  : selectedOption.value 
     });
       
-    this.props.onSelect(selectedOption.value);
+    this.props.onSelect(selectedOption);
   }
 
   render() {

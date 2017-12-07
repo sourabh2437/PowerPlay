@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import bookingData from '../data/Booking.json';
+import locationData from '../data/Location.json';
 import CourtPreview from './CourtPreview';
 import AppHeader from './AppHeader';
 import Filterbar from './FilterBar';
@@ -12,7 +13,8 @@ class BadmintonCourts extends Component {
         pageDesc:'Come on Shuttlers!!!',
         location: 'l1',
         date: 'd1',
-        slot: 's1'        
+        slot: 's1',
+        slotLabel : ''
     };
 
 
@@ -20,8 +22,9 @@ class BadmintonCourts extends Component {
     this.setState({ location  : value });
     }
     
-    handleSelect2 = (value) => {
-    this.setState({ slot  : value });
+    handleSelect2 = (selectedOption) => {
+    this.setState({ slot  : selectedOption.value,
+                    slotLabel :selectedOption.label});
     }
     
     
@@ -32,6 +35,15 @@ class BadmintonCourts extends Component {
     var aSlot=this.state.slot;
         
     var aData= bookingData.badminton;
+    var aSlots = aData[aLocation][aDate][aSlot];
+    var availableCourts = [];
+    for(var i=0;i<aSlots.length;i++){
+        if(aSlots[i]===0){
+            availableCourts.push(i);
+        }
+    }
+        
+    var aPrice= locationData[aLocation]['properties']['Badminton']['Price'][aSlot];
         
     return (
         
@@ -47,8 +59,8 @@ class BadmintonCourts extends Component {
                 </div>
         
                 <div className="row" >
-                    {aData[aLocation][aDate][aSlot].map(itr =>
-                      <CourtPreview image={"images/badminton_tile.jpg"} courtName="A" courtLocation="AB" />
+                    {availableCourts.map(itr =>
+                      <CourtPreview image={"images/badminton_tile.jpg"} courtLocation="AB" price={aPrice} courtNumber={itr+1} sLabel={this.state.slotLabel} />
                     )}
                 </div>
         
